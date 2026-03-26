@@ -1,50 +1,72 @@
-# Cardiovascular Disease Prediction (ML)
+# Cardiovascular Disease Prediction (Machine Learning)
 
-Machine learning model to detect cardiovascular disease using clinical data.
+Machine learning model to detect cardiovascular disease using clinical variables from the Cleveland dataset.
 
-- Accuracy: ~88%
-- Recall (disease): ~91%
-- Cross-validation: ~84%
+**Key results**
+- Accuracy: ~89%
+- Recall for disease detection: **0.97**
+- False negatives reduced from **3 to 1** by adjusting the decision threshold
+- Cross-validation accuracy: ~84%
 
-The goal is to evaluate how well these models perform and assess their potential applicability in real clinical environments.
+---
 
-Dataset
-Public dataset: Cleveland Heart Disease Dataset
+## Why This Matters
 
-~300 patients
+In clinical practice, missing a patient with cardiovascular disease (false negative) can have severe consequences.  
+This project optimizes the model using clinical reasoning, prioritizing recall over raw accuracy.
 
-14 clinical variables (age, cholesterol, blood pressure, etc.)
+---
 
-Tools & Technologies
-Python
+## Dataset
 
-pandas
+Cleveland Heart Disease Dataset (303 patients, 13 clinical variables).
 
-scikit-learn
+---
 
-matplotlib
+## Methodology
 
-Methodology
+1. Data cleaning and exploration
+2. Feature correlation analysis
+3. Logistic Regression model with balanced class weights
+4. **Decision threshold adjustment (0.3 instead of 0.5)** to reduce false negatives
+5. Evaluation using confusion matrix, recall, precision and ROC analysis
 
-Data cleaning and preprocessing
+---
 
-Feature scaling (StandardScaler)
+## Clinical Threshold Adjustment
 
-Train-test split (80/20)
+Lowering the classification threshold from 0.5 to 0.3:
 
-Logistic Regression model
+| Metric | Threshold 0.5 | Threshold 0.3 |
+|--------|----------------|----------------|
+| False Negatives | 3 | **1** |
+| Recall (Disease) | 0.91 | **0.97** |
+| Accuracy | 0.89 | 0.89 |
 
-Model evaluation using:
--Accuracy
+This demonstrates how ML models should be adapted to healthcare priorities rather than generic metrics.
 
--Precision / Recall
+---
 
--F1-score
+## Technologies Used
 
--Confusion Matrix
+- Python
+- pandas, numpy
+- seaborn, matplotlib
+- scikit-learn
+- Google Colab
 
-### Clinical Threshold Adjustment
+---
 
-By lowering the classification threshold to 0.3, the model reduced false negatives from 3 to 1, increasing recall for disease detection from 0.91 to 0.97, without reducing overall accuracy.
+## Project Structure
+cardiovascular-disease-ml/
+│
+├── cardiovascular_risk_ml.ipynb
+├── heart.csv
+├── README.md
+├── requirements.txt
 
-This reflects a clinically-oriented optimization prioritizing patient safety over pure statistical performance.
+---
+
+## Conclusions
+
+This project shows how medical knowledge can guide machine learning optimization to create clinically meaningful models. Using the logic behind algorythms and the clincial experience.
