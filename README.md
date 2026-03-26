@@ -1,6 +1,6 @@
 # Cardiovascular Disease Prediction (Machine Learning)
 
-Machine learning model to detect cardiovascular disease using clinical variables from the Cleveland dataset.
+Machine learning model to asses cardiovascular disease risk using clinical variables from the Cleveland dataset.
 
 **Key results**
 - Accuracy: ~89%
