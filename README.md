@@ -25,6 +25,7 @@ scikit-learn
 matplotlib
 
 Methodology
+
 Data cleaning and preprocessing
 
 Feature scaling (StandardScaler)
@@ -34,10 +35,16 @@ Train-test split (80/20)
 Logistic Regression model
 
 Model evaluation using:
-Accuracy
+-Accuracy
 
-Precision / Recall
+-Precision / Recall
 
-F1-score
+-F1-score
 
-Confusion Matrix
+-Confusion Matrix
+
+### Clinical Threshold Adjustment
+
+By lowering the classification threshold to 0.3, the model reduced false negatives from 3 to 1, increasing recall for disease detection from 0.91 to 0.97, without reducing overall accuracy.
+
+This reflects a clinically-oriented optimization prioritizing patient safety over pure statistical performance.
